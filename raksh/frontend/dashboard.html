@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - RAKSH</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+  <div id="appLoader" class="app-loader">
+    <div class="loader-content">
+      <div class="loader-shield">🛡️</div>
+      <div class="loader-brand">RAKSH</div>
+      <div class="loader-tagline">AI Security Guardian</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+      <div class="loader-text" id="loaderText">Initializing protection...</div>
+    </div>
+  </div>
+  <div class="sidebar-overlay"></div>
+<div class="app-container">
+  <aside class="sidebar" role="navigation" aria-label="Main navigation">
+    <div class="sidebar-brand">
+      <div class="logo-icon">S</div>
+      <span class="brand-text">RAKSH</span>
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">◀</button>
+    </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section"><div class="nav-section-title">Main</div>
+          <div class="nav-item active" data-href="dashboard.html"><span class="nav-icon">📊</span><span class="nav-label">Dashboard</span><span class="tooltip">Dashboard</span></div>
+          <div class="nav-item" data-href="protection.html"><span class="nav-icon">🛡️</span><span class="nav-label">Protection</span><span class="tooltip">Protection</span></div>
+          <div class="nav-item" data-href="scan.html"><span class="nav-icon">🔍</span><span class="nav-label">Scanner</span><span class="tooltip">Scanner</span></div>
+          <div class="nav-item" data-href="scanned-messages.html"><span class="nav-icon">📋</span><span class="nav-label">Scanned Messages</span><span class="tooltip">Scanned Messages</span></div>
+          <div class="nav-item" data-href="security-center.html"><span class="nav-icon">🔒</span><span class="nav-label">Security Center</span><span class="nav-badge" id="navCenterBadge">12</span><span class="tooltip">Security Center</span></div>
+          <div class="nav-item" data-href="ai-assistant.html"><span class="nav-icon">🤖</span><span class="nav-label">AI Assistant</span><span class="tooltip">AI Assistant</span></div>
+        </div>
+        <div class="nav-section"><div class="nav-section-title">Account</div>
+          <div class="nav-item" data-href="notifications.html"><span class="nav-icon">🔔</span><span class="nav-label">Notifications</span><span class="nav-badge" id="navNotifBadge">3</span><span class="tooltip">Notifications</span></div>
+          <div class="nav-item" data-href="profile.html"><span class="nav-icon">👤</span><span class="nav-label">Profile</span><span class="tooltip">Profile</span></div>
+          <div class="nav-item" data-href="settings.html"><span class="nav-icon">⚙️</span><span class="nav-label">Settings</span><span class="tooltip">Settings</span></div>
+        </div>
+        <div class="nav-section"><div class="nav-section-title">Support</div>
+          <div class="nav-item" data-href="help.html"><span class="nav-icon">❓</span><span class="nav-label">Help Center</span><span class="tooltip">Help Center</span></div>
+          <div class="nav-item" data-href="about.html"><span class="nav-icon">ℹ️</span><span class="nav-label">About</span><span class="tooltip">About</span></div>
+        </div>
+      </nav>
+    <div class="sidebar-footer"><div class="branding-footer">IFX Group</div></div>
+  </aside>
+
+    <main class="main-content" id="mainContent" role="main">
+    <header class="topbar" role="banner">
+      <div class="topbar-left">
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle sidebar">☰</button>
+        <h1 class="page-title">Dashboard</h1>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-search">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="globalSearch" placeholder="Search scans, threats, reports..." aria-label="Search everything">
+        </div>
+        <button class="topbar-action-btn" id="settingsBtn" aria-label="Settings">⚙️</button>
+        <button class="topbar-action-btn" id="notifBtn" aria-label="Notifications">🔔<span class="badge" id="notifBadge">3</span></button>
+        <button class="topbar-action-btn" aria-label="Profile" onclick="navigateTo('profile.html')">👤</button>
+      </div>
+    </header>
+
+    <div class="page-content" id="dashboardPage">
+      <div class="dash-stat-grid">
+        <div class="glass-card stat-card spotlight-card" id="statProtectionStatus">
+          <div class="stat-header">
+            <span class="stat-label">Protection Status</span>
+            <div class="dash-stat-icon primary">🛡️</div>
+          </div>
+          <div class="stat-value dash-stat-value" id="protStatusValue">Active</div>
+          <div id="protStatusLabel" style="font-size:13px;color:var(--accent-success);display:flex;align-items:center;gap:6px;margin-top:2px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--accent-success);display:inline-block;"></span> All Safe</div>
+        </div>
+        <div class="glass-card stat-card spotlight-card" id="statRiskLevel">
+          <div class="stat-header">
+            <span class="stat-label">Risk Level</span>
+            <div class="dash-stat-icon warning">⚠️</div>
+          </div>
+          <div class="stat-value dash-stat-value success" id="riskLevelValue">Low</div>
+        </div>
+        <div class="glass-card stat-card spotlight-card" id="statMessagesReceived">
+          <div class="stat-header">
+            <span class="stat-label">Messages Received</span>
+            <div class="dash-stat-icon info">📨</div>
+          </div>
+          <div class="stat-value dash-stat-value" id="messagesReceivedValue">0</div>
+        </div>
+        <div class="glass-card stat-card spotlight-card" id="statThreatsDetected">
+          <div class="stat-header">
+            <span class="stat-label">Threats Detected</span>
+            <div class="dash-stat-icon danger">🚨</div>
+          </div>
+          <div class="stat-value dash-stat-value" id="threatsDetectedValue">0</div>
+        </div>
+        <div class="glass-card stat-card spotlight-card" id="statSafeMessages">
+          <div class="stat-header">
+            <span class="stat-label">Safe Messages</span>
+            <div class="dash-stat-icon success">✅</div>
+          </div>
+          <div class="stat-value dash-stat-value" id="safeMessagesValue">0</div>
+        </div>
+        <div class="glass-card stat-card spotlight-card" id="statCriticalAlerts">
+          <div class="stat-header">
+            <span class="stat-label">Critical Alerts</span>
+            <div class="dash-stat-icon danger">🔥</div>
+          </div>
+          <div class="stat-value dash-stat-value" id="criticalAlertsValue">0</div>
+        </div>
+        <div class="glass-card stat-card spotlight-card dash-full-width" id="statTodayActivity">
+          <div class="stat-header">
+            <span class="stat-label">Today's Activity</span>
+            <div class="dash-stat-icon primary">📊</div>
+          </div>
+          <div class="stat-value" id="todayActivityValue" style="font-size:20px;font-weight:500;">No activity yet</div>
+        </div>
+      </div>
+
+      <div class="dashboard-row" style="grid-template-columns:1fr 1fr 1fr;margin-bottom:20px;">
+        <div class="glass-card" id="lastScanWidget">
+          <div class="dash-section-header">
+            <h3 style="font-size:15px;font-weight:600;">📋 Last Scan</h3>
+          </div>
+          <div id="lastScanContent"></div>
+        </div>
+        <div class="glass-card" id="recentAlertsWidget">
+          <div class="dash-section-header">
+            <h3 style="font-size:15px;font-weight:600;">🚨 Recent Alerts</h3>
+            <a href="notifications.html" style="font-size:12px;">View All</a>
+          </div>
+          <div id="recentAlertsContent"></div>
+        </div>
+        <div class="glass-card" id="quickScanWidget">
+          <div class="dash-section-header">
+            <h3 style="font-size:15px;font-weight:600;">⚡ Quick Scan</h3>
+          </div>
+          <div style="text-align:center;padding:24px 16px;">
+            <div style="font-size:48px;margin-bottom:12px;">🔍</div>
+            <div style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">Analyze a suspicious message, link, or file instantly</div>
+            <button class="btn btn-primary" onclick="navigateTo('scan.html')">Start Quick Scan</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-row" style="grid-template-columns:2fr 1fr;margin-bottom:20px;">
+        <div class="glass-card dashboard-chart">
+          <div class="chart-header"><h3>Weekly Scan Trend</h3><span style="font-size:12px;color:var(--text-muted);">Last 7 days</span></div>
+          <div class="chart-container chart-container-inner" id="dailyScansBarChart"></div>
+        </div>
+        <div class="glass-card dashboard-chart">
+          <div class="chart-header"><h3>Threat Categories</h3><span style="font-size:12px;color:var(--text-muted);">Distribution</span></div>
+          <div class="chart-container chart-container-inner" id="categoryChart"></div>
+        </div>
+      </div>
+
+      <div class="dashboard-row" style="grid-template-columns:1fr 1fr;">
+        <div class="glass-card scan-history-card">
+          <div class="dash-section-header">
+            <h3 style="font-size:15px;font-weight:600;">Recent Scans</h3>
+            <a href="security-center.html" style="font-size:12px;">View All</a>
+          </div>
+          <div id="recentScanHistoryList"></div>
+        </div>
+        <div class="glass-card">
+          <h3 style="font-size:15px;font-weight:600;margin-bottom:12px;">Activity Timeline</h3>
+          <div id="recentActivityTimeline"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="floating-shield" id="floatingShield">
+  <div class="shield-icon safe" role="button" tabindex="0" aria-label="Security status">🛡️<span class="shield-badge" id="shieldMainBadge">3</span></div>
+  <div class="shield-panel">
+    <div class="shield-panel-header">
+      <div class="shield-status"><div class="status-dot safe"></div><span class="status-text">All Safe</span></div>
+      <button class="shield-close btn btn-ghost btn-sm">✕</button>
+    </div>
+    <div class="shield-stat"><span class="stat-label">Threats Today</span><span class="stat-value" id="shieldThreatCount">0</span></div>
+    <div class="shield-actions"><button class="btn btn-primary btn-sm shield-action-btn" onclick="navigateTo('scan.html')">Quick Scan</button></div>
+  </div>
+</div>
+
+<div id="commandPalette" class="command-palette-overlay">
+  <div class="command-palette">
+    <div class="cp-search">
+      <span>🔍</span>
+      <input type="text" placeholder="Search pages and actions..." autofocus>
+      <span style="font-size:11px;color:var(--text-muted);">Esc to close</span>
+    </div>
+    <div class="cp-results"></div>
+  </div>
+</div>
+
+<div id="toastContainer" class="toast-container" role="alert" aria-live="polite"></div>
+
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

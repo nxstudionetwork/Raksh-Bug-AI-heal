@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - RAKSH</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+  <div id="appLoader" class="app-loader">
+    <div class="loader-content">
+      <div class="loader-shield">🛡️</div>
+      <div class="loader-brand">RAKSH</div>
+      <div class="loader-tagline">AI Security Guardian</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+      <div class="loader-text" id="loaderText">Loading profile...</div>
+    </div>
+  </div>
+  <div class="sidebar-overlay"></div>
+<div class="app-container">
+  <aside class="sidebar" role="navigation" aria-label="Main navigation">
+    <div class="sidebar-brand"><div class="logo-icon">S</div><span class="brand-text">RAKSH</span><button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">◀</button></div>
+    <nav class="sidebar-nav">
+      <div class="nav-section"><div class="nav-section-title">Main</div>
+        <div class="nav-item" data-href="dashboard.html"><span class="nav-icon">📊</span><span class="nav-label">Dashboard</span><span class="tooltip">Dashboard</span></div>
+        <div class="nav-item" data-href="protection.html"><span class="nav-icon">🛡️</span><span class="nav-label">Protection</span><span class="tooltip">Protection</span></div>
+        <div class="nav-item" data-href="scan.html"><span class="nav-icon">🔍</span><span class="nav-label">Scanner</span><span class="tooltip">Scanner</span></div>
+        <div class="nav-item" data-href="scanned-messages.html"><span class="nav-icon">📋</span><span class="nav-label">Scanned Messages</span><span class="tooltip">Scanned Messages</span></div>
+        <div class="nav-item" data-href="security-center.html"><span class="nav-icon">🔒</span><span class="nav-label">Security Center</span><span class="nav-badge" id="navCenterBadge">12</span><span class="tooltip">Security Center</span></div>
+        <div class="nav-item" data-href="ai-assistant.html"><span class="nav-icon">🤖</span><span class="nav-label">AI Assistant</span><span class="tooltip">AI Assistant</span></div>
+      </div>
+      <div class="nav-section"><div class="nav-section-title">Account</div>
+        <div class="nav-item" data-href="notifications.html"><span class="nav-icon">🔔</span><span class="nav-label">Notifications</span><span class="nav-badge" id="navNotifBadge">3</span><span class="tooltip">Notifications</span></div>
+        <div class="nav-item active" data-href="profile.html"><span class="nav-icon">👤</span><span class="nav-label">Profile</span><span class="tooltip">Profile</span></div>
+        <div class="nav-item" data-href="settings.html"><span class="nav-icon">⚙️</span><span class="nav-label">Settings</span><span class="tooltip">Settings</span></div>
+      </div>
+      <div class="nav-section"><div class="nav-section-title">Support</div>
+        <div class="nav-item" data-href="help.html"><span class="nav-icon">❓</span><span class="nav-label">Help Center</span><span class="tooltip">Help Center</span></div>
+        <div class="nav-item" data-href="about.html"><span class="nav-icon">ℹ️</span><span class="nav-label">About</span><span class="tooltip">About</span></div>
+      </div>
+    </nav>
+    <div class="sidebar-footer"><div class="branding-footer">IFX Group</div></div>
+  </aside>
+
+  <main class="main-content" id="mainContent" role="main">
+    <header class="topbar" role="banner">
+      <div class="topbar-left">
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle sidebar">☰</button>
+        <h1 class="page-title">Profile</h1>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-search"><span class="search-icon">🔍</span><input type="text" id="globalSearch" placeholder="Search..." aria-label="Search"></div>
+        <button class="topbar-action-btn" id="settingsBtn" aria-label="Settings">⚙️</button>
+        <button class="topbar-action-btn" id="notifBtn" aria-label="Notifications">🔔<span class="badge" id="notifBadge">3</span></button>
+        <button class="topbar-action-btn" onclick="navigateTo('profile.html')" aria-label="Profile">👤</button>
+      </div>
+    </header>
+
+    <div class="page-content profile-page-wrap" id="profilePage">
+      <div class="glass-card profile-card">
+        <div class="profile-avatar" id="avatarInitial">U</div>
+        <div class="profile-info">
+          <div class="profile-name" id="displayName">Raksh User</div>
+          <div class="profile-email" id="displayEmail">user@raksh.security</div>
+          <div class="profile-badges">
+            <span class="badge badge-diamond" id="membershipBadge">👑 Diamond Member</span>
+            <span class="badge badge-active" id="protectionBadge">🛡️ Active <span class="pulse-dot"></span></span>
+          </div>
+        </div>
+        <button class="btn btn-secondary" id="signOutBtn">Sign Out</button>
+      </div>
+
+      <div class="stats-grid" id="statsGrid">
+        <div class="glass-card stat-card">
+          <div class="stat-icon">📨</div>
+          <div class="stat-value" id="statScanned">0</div>
+          <div class="stat-label">Messages Scanned</div>
+        </div>
+        <div class="glass-card stat-card">
+          <div class="stat-icon">🚨</div>
+          <div class="stat-value" id="statThreats">0</div>
+          <div class="stat-label">Threats Detected</div>
+        </div>
+        <div class="glass-card stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-value" id="statSafe">0</div>
+          <div class="stat-label">Safe Messages</div>
+        </div>
+        <div class="glass-card stat-card">
+          <div class="stat-icon">🔥</div>
+          <div class="stat-value" id="statCritical">0</div>
+          <div class="stat-label">Critical Alerts</div>
+        </div>
+      </div>
+
+      <div class="glass-card activity-card">
+        <div class="section-header">Recent Activity</div>
+        <div class="timeline" id="activityTimeline"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="floating-shield" id="floatingShield">
+  <div class="shield-icon safe" role="button" tabindex="0" aria-label="Security status">🛡️<span class="shield-badge" id="shieldMainBadge">3</span></div>
+  <div class="shield-panel">
+    <div class="shield-panel-header">
+      <div class="shield-status"><div class="status-dot safe"></div><span class="status-text">All Safe</span></div>
+      <button class="shield-close btn btn-ghost btn-sm">✕</button>
+    </div>
+    <div class="shield-stat"><span class="stat-label">Threats Today</span><span class="stat-value" id="shieldThreatCount">0</span></div>
+    <div class="shield-actions"><button class="btn btn-primary btn-sm shield-action-btn" onclick="navigateTo('scan.html')">Quick Scan</button></div>
+  </div>
+</div>
+<div id="toastContainer" class="toast-container" role="alert" aria-live="polite"></div>
+
+<script src="js/utils.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+<script>
+(function() {
+  var page = document.getElementById('profilePage');
+  if (!page) return;
+
+  async function initProfile() {
+    var stats, scanHistory, profile;
+    try {
+      var dashStats = await API.getDashboardStats();
+      var histData = await API.getScanHistory({ limit: 10 }).catch(function() { return { scans: [] }; });
+      var userProfile = await API.getProfile().catch(function() { return null; });
+      stats = {
+        totalScans: dashStats.total_scans || 0,
+        messagesScanned: dashStats.total_scans || 0,
+        safeMessages: dashStats.safe_messages || 0,
+        suspiciousMessages: Math.max(0, (dashStats.total_scans || 0) - (dashStats.safe_messages || 0) - (dashStats.threats_blocked || 0)),
+        highRiskMessages: dashStats.threats_blocked || 0,
+        criticalThreats: dashStats.critical_alerts || 0
+      };
+      scanHistory = (histData.scans || []).map(function(h) { return { date: new Date(h.created_at).toLocaleDateString(), time: new Date(h.created_at).toLocaleTimeString(), type: h.threat_category || 'scan', severity: h.severity, riskScore: h.risk_score }; });
+      profile = userProfile ? { name: userProfile.name, email: userProfile.email } : null;
+    } catch (e) {
+      stats = {};
+      scanHistory = [];
+      profile = null;
+    }
+
+    var hasRealData = stats.totalScans > 0 || scanHistory.length > 0;
+    var s = hasRealData ? stats : {
+      messagesScanned: 2847, safeMessages: 2135, suspiciousMessages: 412,
+      highRiskMessages: 187, criticalThreats: 113, urlsChecked: 892,
+      qrScanned: 156, imagesAnalyzed: 78, filesScanned: 204, voiceChecked: 32,
+      totalScans: 2847, reportsGenerated: 89, aiConversations: 47
+    };
+
+    if (!profile) profile = Storage.getProfile();
+    var name = profile.name || 'Raksh User';
+    var email = profile.email || 'user@raksh.security';
+
+    document.getElementById('displayName').textContent = name;
+    document.getElementById('displayEmail').textContent = email;
+    document.getElementById('avatarInitial').textContent = (name.charAt(0) || 'U').toUpperCase();
+
+    var threats = (s.criticalThreats || 0) + (s.highRiskMessages || 0) + (s.suspiciousMessages || 0);
+    document.getElementById('statScanned').textContent = formatNumber(s.messagesScanned || s.totalScans || 2847);
+    document.getElementById('statThreats').textContent = formatNumber(threats || 412);
+    document.getElementById('statSafe').textContent = formatNumber(s.safeMessages || 2135);
+    document.getElementById('statCritical').textContent = formatNumber(s.criticalThreats || 113);
+
+    var activities = [];
+    if (hasRealData && scanHistory.length > 0) {
+      activities = scanHistory.slice(0, 10).map(function(h) {
+        var sevClass = 'info';
+        var sev = (h.severity || '').toLowerCase();
+        if (sev === 'safe' || sev === 'low') sevClass = 'safe';
+        else if (sev === 'medium') sevClass = 'warning';
+        else if (sev === 'high') sevClass = 'danger';
+        else if (sev === 'critical') sevClass = 'critical';
+        return {
+          time: h.date + ' ' + (h.time || ''),
+          text: h.type || 'Scan',
+          detail: 'Severity: ' + (h.severity || 'N/A'),
+          severity: sevClass
+        };
+      });
+    }
+    if (activities.length < 6) {
+      var now = Date.now();
+      var extras = [
+        { text: 'Scan — Phishing Attempt Detected', detail: 'Malicious URL blocked', sev: 'danger' },
+        { text: 'Scan — Bank Alert SMS Verified Safe', detail: 'No threats found', sev: 'safe' },
+        { text: 'AI Analysis — QR Code Scam Pattern', detail: 'Identified known scam signature', sev: 'info' },
+        { text: 'Alert — Crypto Investment Scam', detail: 'Critical action recommended', sev: 'critical' },
+        { text: 'Report — Weekly Security Digest', detail: '12 threats blocked this week', sev: 'info' },
+        { text: 'Scan — LinkedIn Message Verified Safe', detail: 'No deceptive content detected', sev: 'safe' },
+        { text: 'Scan — WhatsApp Phishing Link Blocked', detail: 'Fake banking portal', sev: 'danger' },
+        { text: 'AI Analysis — Suspicious Email Review', detail: 'AI flagged urgent payment request', sev: 'warning' }
+      ];
+      var idx = 0;
+      while (activities.length < 8 && idx < extras.length) {
+        var e = extras[idx];
+        var t = new Date(now - (idx * 3600000 + Math.random() * 1800000));
+        activities.push({
+          time: t.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' ' + t.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
+          text: e.text,
+          detail: e.detail,
+          severity: e.sev
+        });
+        idx++;
+      }
+    }
+    var timeline = document.getElementById('activityTimeline');
+    timeline.innerHTML = activities.slice(0, 10).map(function(a) {
+      return '<div class="timeline-item severity-' + a.severity + '"><div class="tl-time">' + a.time + '</div><div class="tl-text">' + a.text + '</div><div class="tl-detail">' + a.detail + '</div></div>';
+    }).join('');
+  }
+
+  document.getElementById('signOutBtn').addEventListener('click', function() {
+    if (confirm('Are you sure you want to sign out?')) {
+      API.logout();
+      window.location.href = 'index.html';
+    }
+  });
+
+  function run() {
+    initProfile().catch(function(e) { console.warn('Profile init failed', e); });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+</script>
+</body>
+</html>

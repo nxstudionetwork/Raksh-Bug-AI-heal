@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - RAKSH</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+  <div id="appLoader" class="app-loader">
+    <div class="loader-content">
+      <div class="loader-shield">🛡️</div>
+      <div class="loader-brand">RAKSH</div>
+      <div class="loader-tagline">AI Security Guardian</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+      <div class="loader-text" id="loaderText">Initializing protection...</div>
+    </div>
+  </div>
+  <div class="sidebar-overlay"></div>
+  <div class="app-container">
+    <aside class="sidebar" role="navigation" aria-label="Main navigation">
+      <div class="sidebar-brand"><div class="logo-icon">S</div><span class="brand-text">RAKSH</span><button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">◀</button></div>
+      <nav class="sidebar-nav">
+        <div class="nav-section"><div class="nav-section-title">Main</div>
+          <div class="nav-item" data-href="dashboard.html"><span class="nav-icon">📊</span><span class="nav-label">Dashboard</span><span class="tooltip">Dashboard</span></div>
+          <div class="nav-item" data-href="protection.html"><span class="nav-icon">🛡️</span><span class="nav-label">Protection</span><span class="tooltip">Protection</span></div>
+          <div class="nav-item" data-href="scan.html"><span class="nav-icon">🔍</span><span class="nav-label">Scanner</span><span class="tooltip">Scanner</span></div>
+          <div class="nav-item" data-href="scanned-messages.html"><span class="nav-icon">📋</span><span class="nav-label">Scanned Messages</span><span class="tooltip">Scanned Messages</span></div>
+          <div class="nav-item" data-href="security-center.html"><span class="nav-icon">🔒</span><span class="nav-label">Security Center</span><span class="nav-badge" id="navCenterBadge">12</span><span class="tooltip">Security Center</span></div>
+          <div class="nav-item" data-href="ai-assistant.html"><span class="nav-icon">🤖</span><span class="nav-label">AI Assistant</span><span class="tooltip">AI Assistant</span></div>
+        </div>
+        <div class="nav-section"><div class="nav-section-title">Account</div>
+          <div class="nav-item" data-href="notifications.html"><span class="nav-icon">🔔</span><span class="nav-label">Notifications</span><span class="nav-badge" id="navNotifBadge">3</span><span class="tooltip">Notifications</span></div>
+          <div class="nav-item" data-href="profile.html"><span class="nav-icon">👤</span><span class="nav-label">Profile</span><span class="tooltip">Profile</span></div>
+          <div class="nav-item" data-href="settings.html"><span class="nav-icon">⚙️</span><span class="nav-label">Settings</span><span class="tooltip">Settings</span></div>
+        </div>
+        <div class="nav-section"><div class="nav-section-title">Support</div>
+          <div class="nav-item" data-href="help.html"><span class="nav-icon">❓</span><span class="nav-label">Help Center</span><span class="tooltip">Help Center</span></div>
+          <div class="nav-item active" data-href="about.html"><span class="nav-icon">ℹ️</span><span class="nav-label">About</span><span class="tooltip">About</span></div>
+        </div>
+      </nav>
+      <div class="sidebar-footer"><div class="branding-footer">IFX Group</div></div>
+    </aside>
+
+    <main class="main-content" id="mainContent" role="main">
+      <header class="topbar" role="banner">
+        <div class="topbar-left"><button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle sidebar">☰</button><h1 class="page-title">About</h1></div>
+        <div class="topbar-right">
+          <div class="topbar-search" style="transition:border-color 0.2s ease,box-shadow 0.2s ease;"><span class="search-icon">🔍</span><input type="text" placeholder="Search..." aria-label="Search"></div>
+          <button class="topbar-action-btn" id="settingsBtn" aria-label="Settings">⚙️</button>
+          <button class="topbar-action-btn" id="notifBtn" aria-label="Notifications">🔔<span class="badge" id="notifBadge">3</span></button>
+          <button class="topbar-action-btn" onclick="navigateTo('profile.html')" aria-label="Profile">👤</button>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <div class="glass-card about-section">
+          <div class="about-logo">🛡️ RAKSH</div>
+          <div class="about-tagline">AI-Powered Digital Security Guardian — Protecting you from scams, phishing, fraud, and social engineering.</div>
+          <p style="font-size:13px;color:var(--text-muted);max-width:600px;margin:0 auto 24px;line-height:1.7;">
+            RAKSH (meaning "protection" in Sanskrit) is your intelligent digital guardian. 
+            It analyzes messages, links, QR codes, images, files, voice notes, and videos for 
+            scam indicators using simulated AI. Built as a frontend prototype, it demonstrates 
+            how a real AI security engine would work once connected to backend services.
+          </p>
+
+          <div class="about-features">
+            <div class="about-feature"><div class="af-icon">🔍</div><div class="af-title">Message Analysis</div><div class="af-desc">Real-time scam detection</div></div>
+            <div class="about-feature"><div class="af-icon">🔗</div><div class="af-title">Link Scanner</div><div class="af-desc">URL safety verification</div></div>
+            <div class="about-feature"><div class="af-icon">📷</div><div class="af-title">QR Scanner</div><div class="af-desc">Fake code detection</div></div>
+            <div class="about-feature"><div class="af-icon">🖼️</div><div class="af-title">Image OCR</div><div class="af-desc">Suspicious text extraction</div></div>
+            <div class="about-feature"><div class="af-icon">📁</div><div class="af-title">File Analysis</div><div class="af-desc">Malware risk assessment</div></div>
+            <div class="about-feature"><div class="af-icon">🎤</div><div class="af-title">Voice Scan</div><div class="af-desc">Audio scam detection</div></div>
+            <div class="about-feature"><div class="af-icon">📊</div><div class="af-title">Analytics</div><div class="af-desc">Threat intelligence</div></div>
+            <div class="about-feature"><div class="af-icon">👥</div><div class="af-title">Community</div><div class="af-desc">Collective protection</div></div>
+          </div>
+
+          <div style="margin-top:32px;padding-top:24px;border-top:1px solid var(--border-glass);">
+            <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;">
+              <div><div style="font-size:13px;font-weight:600;">Version</div><div style="font-size:12px;color:var(--text-muted);">2.0.0</div></div>
+              <div><div style="font-size:13px;font-weight:600;">Engine</div><div style="font-size:12px;color:var(--text-muted);">RAKSH AI v2</div></div>
+              <div><div style="font-size:13px;font-weight:600;">Status</div><div style="font-size:12px;color:var(--accent-success);">Simulated AI Active</div></div>
+              <div><div style="font-size:13px;font-weight:600;">Data</div><div style="font-size:12px;color:var(--text-muted);">100% Local Storage</div></div>
+            </div>
+          </div>
+
+          <div style="margin-top:24px;font-size:12px;color:var(--text-muted);">
+            RAKSH is a frontend prototype. All AI analysis is simulated using rule-based detection. 
+            No real monitoring of private messages occurs. This tool is designed for educational and 
+            demonstration purposes. Connect a real AI backend for production use.
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="floating-shield" id="floatingShield">
+    <div class="shield-icon safe" role="button" tabindex="0" aria-label="Security status">🛡️<span class="shield-badge" id="shieldMainBadge">3</span></div>
+    <div class="shield-panel">
+      <div class="shield-panel-header">
+        <div class="shield-status"><div class="status-dot safe"></div><span class="status-text">All Safe</span></div>
+        <button class="shield-close btn btn-ghost btn-sm">✕</button>
+      </div>
+      <div class="shield-stat"><span class="stat-label">Threats Today</span><span class="stat-value" id="shieldThreatCount">0</span></div>
+      <div class="shield-actions"><button class="btn btn-primary btn-sm shield-action-btn" onclick="navigateTo('scan.html')">Quick Scan</button></div>
+    </div>
+  </div>
+  <div id="toastContainer" class="toast-container" role="alert" aria-live="polite"></div>
+
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

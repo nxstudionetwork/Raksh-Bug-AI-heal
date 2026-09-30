@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Security Analyst - RAKSH</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/ai-assistant.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+  <div id="appLoader" class="app-loader">
+    <div class="loader-content">
+      <div class="loader-shield">🛡️</div>
+      <div class="loader-brand">RAKSH</div>
+      <div class="loader-tagline">AI Security Guardian</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+      <div class="loader-text" id="loaderText">Initializing protection...</div>
+    </div>
+  </div>
+  <div class="sidebar-overlay"></div>
+  <div class="app-container">
+    <aside class="sidebar" role="navigation" aria-label="Main navigation">
+      <div class="sidebar-brand"><div class="logo-icon">R</div><span class="brand-text">RAKSH</span><button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">◀</button></div>
+      <nav class="sidebar-nav">
+        <div class="nav-section"><div class="nav-section-title">Main</div>
+          <div class="nav-item" data-href="dashboard.html"><span class="nav-icon">📊</span><span class="nav-label">Dashboard</span><span class="tooltip">Dashboard</span></div>
+          <div class="nav-item" data-href="protection.html"><span class="nav-icon">🛡️</span><span class="nav-label">Protection</span><span class="tooltip">Protection</span></div>
+          <div class="nav-item" data-href="scan.html"><span class="nav-icon">🔍</span><span class="nav-label">Scanner</span><span class="tooltip">Scanner</span></div>
+          <div class="nav-item" data-href="scanned-messages.html"><span class="nav-icon">📋</span><span class="nav-label">Scanned Messages</span><span class="tooltip">Scanned Messages</span></div>
+          <div class="nav-item" data-href="security-center.html"><span class="nav-icon">🔒</span><span class="nav-label">Security Center</span><span class="nav-badge" id="navCenterBadge">12</span><span class="tooltip">Security Center</span></div>
+          <div class="nav-item active" data-href="ai-assistant.html"><span class="nav-icon">🤖</span><span class="nav-label">AI Security Analyst</span><span class="tooltip">AI Security Analyst</span></div>
+        </div>
+        <div class="nav-section"><div class="nav-section-title">Account</div>
+          <div class="nav-item" data-href="notifications.html"><span class="nav-icon">🔔</span><span class="nav-label">Notifications</span><span class="nav-badge" id="navNotifBadge">3</span><span class="tooltip">Notifications</span></div>
+          <div class="nav-item" data-href="profile.html"><span class="nav-icon">👤</span><span class="nav-label">Profile</span><span class="tooltip">Profile</span></div>
+          <div class="nav-item" data-href="settings.html"><span class="nav-icon">⚙️</span><span class="nav-label">Settings</span><span class="tooltip">Settings</span></div>
+        </div>
+        <div class="nav-section"><div class="nav-section-title">Support</div>
+          <div class="nav-item" data-href="help.html"><span class="nav-icon">❓</span><span class="nav-label">Help Center</span><span class="tooltip">Help Center</span></div>
+          <div class="nav-item" data-href="about.html"><span class="nav-icon">ℹ️</span><span class="nav-label">About</span><span class="tooltip">About</span></div>
+        </div>
+      </nav>
+      <div class="sidebar-footer"><div class="branding-footer">IFX Group</div></div>
+    </aside>
+    <main class="main-content" id="mainContent" role="main">
+      <header class="topbar" role="banner">
+        <div class="topbar-left"><button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle sidebar">☰</button><h1 class="page-title">AI Security Analyst</h1></div>
+        <div class="topbar-right">
+          <div class="topbar-search" style="transition:border-color 0.2s ease,box-shadow 0.2s ease;"><span class="search-icon">🔍</span><input type="text" placeholder="Search threats..." aria-label="Search"></div>
+          <button class="topbar-action-btn" id="settingsBtn" aria-label="Settings">⚙️</button>
+          <button class="topbar-action-btn" id="notifBtn" aria-label="Notifications">🔔<span class="badge" id="notifBadge">3</span></button>
+          <button class="topbar-action-btn" onclick="navigateTo('profile.html')" aria-label="Profile">👤</button>
+        </div>
+      </header>
+      <div class="page-content" id="aiAssistantPage" style="padding:0;">
+        <div class="ai-container">
+          <div class="ai-header">
+            <div class="ai-header-title">🤖 AI Security Analyst</div>
+            <div class="ai-header-actions">
+              <button class="ai-new-chat-btn" id="newChatBtn">+ New Chat</button>
+              <button class="ai-clear-header-btn" id="aiClearBtn">🗑️ Clear Chat</button>
+            </div>
+          </div>
+          <div class="ai-messages" id="aiMessages"></div>
+          <div class="ai-input-area">
+            <div class="ai-input-row">
+              <button class="ai-tool-btn" id="aiFileBtn" title="Attach File">📎</button>
+              <button class="ai-tool-btn" id="aiUploadBtn" title="Upload Image">🖼️</button>
+              <div class="ai-input-wrapper">
+                <textarea id="aiMessageInput" placeholder="Ask about a suspicious message, URL, or file..." rows="1"></textarea>
+              </div>
+              <button class="ai-send-btn" id="aiSendBtn" title="Send Message">⚡</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div class="floating-shield" id="floatingShield">
+    <div class="shield-icon safe" role="button" tabindex="0" aria-label="Security status">🛡️<span class="shield-badge" id="shieldMainBadge">3</span></div>
+    <div class="shield-panel">
+      <div class="shield-panel-header">
+        <div class="shield-status"><div class="status-dot safe"></div><span class="status-text">All Safe</span></div>
+        <button class="shield-close btn btn-ghost btn-sm">✕</button>
+      </div>
+      <div class="shield-stat"><span class="stat-label">Threats Today</span><span class="stat-value" id="shieldThreatCount">0</span></div>
+      <div class="shield-actions"><button class="btn btn-primary btn-sm shield-action-btn" onclick="navigateTo('scan.html')">Quick Scan</button></div>
+    </div>
+  </div>
+  <div id="toastContainer" class="toast-container" role="alert" aria-live="polite"></div>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/ai-assistant.js"></script>
+</body>
+</html>

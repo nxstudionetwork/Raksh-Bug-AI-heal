@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scan Center - RAKSH</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/scan.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+  <div id="appLoader" class="app-loader">
+    <div class="loader-content">
+      <div class="loader-shield">🛡️</div>
+      <div class="loader-brand">RAKSH</div>
+      <div class="loader-tagline">AI Security Guardian</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+      <div class="loader-text" id="loaderText">Initializing protection...</div>
+    </div>
+  </div>
+  <div class="sidebar-overlay"></div>
+  <div class="app-container">
+    <aside class="sidebar" role="navigation" aria-label="Main navigation">
+      <div class="sidebar-brand"><div class="logo-icon">S</div><span class="brand-text">RAKSH</span><button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">◀</button></div>
+      <nav class="sidebar-nav">
+        <div class="nav-section"><div class="nav-section-title">Main</div>
+          <div class="nav-item" data-href="dashboard.html"><span class="nav-icon">📊</span><span class="nav-label">Dashboard</span><span class="tooltip">Dashboard</span></div>
+          <div class="nav-item" data-href="protection.html"><span class="nav-icon">🛡️</span><span class="nav-label">Protection</span><span class="tooltip">Protection</span></div>
+          <div class="nav-item active" data-href="scan.html"><span class="nav-icon">🔍</span><span class="nav-label">Scanner</span><span class="tooltip">Scanner</span></div>
+          <div class="nav-item" data-href="scanned-messages.html"><span class="nav-icon">📋</span><span class="nav-label">Scanned Messages</span><span class="tooltip">Scanned Messages</span></div>
+          <div class="nav-item" data-href="security-center.html"><span class="nav-icon">🔒</span><span class="nav-label">Security Center</span><span class="nav-badge" id="navCenterBadge">12</span><span class="tooltip">Security Center</span></div>
+          <div class="nav-item" data-href="ai-assistant.html"><span class="nav-icon">🤖</span><span class="nav-label">AI Assistant</span><span class="tooltip">AI Assistant</span></div>
+        </div>
+        <div class="nav-section"><div class="nav-section-title">Account</div>
+          <div class="nav-item" data-href="notifications.html"><span class="nav-icon">🔔</span><span class="nav-label">Notifications</span><span class="nav-badge" id="navNotifBadge">3</span><span class="tooltip">Notifications</span></div>
+          <div class="nav-item" data-href="profile.html"><span class="nav-icon">👤</span><span class="nav-label">Profile</span><span class="tooltip">Profile</span></div>
+          <div class="nav-item" data-href="settings.html"><span class="nav-icon">⚙️</span><span class="nav-label">Settings</span><span class="tooltip">Settings</span></div>
+        </div>
+        <div class="nav-section"><div class="nav-section-title">Support</div>
+          <div class="nav-item" data-href="help.html"><span class="nav-icon">❓</span><span class="nav-label">Help Center</span><span class="tooltip">Help Center</span></div>
+          <div class="nav-item" data-href="about.html"><span class="nav-icon">ℹ️</span><span class="nav-label">About</span><span class="tooltip">About</span></div>
+        </div>
+      </nav>
+      <div class="sidebar-footer"><div class="branding-footer">IFX Group</div></div>
+    </aside>
+
+    <main class="main-content" id="mainContent" role="main">
+      <header class="topbar" role="banner">
+        <div class="topbar-left">
+          <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle sidebar">☰</button>
+          <h1 class="page-title">Scan Center</h1>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-search" style="transition:border-color 0.2s ease,box-shadow 0.2s ease;">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="Search..." aria-label="Search">
+          </div>
+          <button class="topbar-action-btn" id="settingsBtn" aria-label="Settings">⚙️</button>
+          <button class="topbar-action-btn" id="notifBtn" aria-label="Notifications">🔔<span class="badge" id="notifBadge">3</span></button>
+          <button class="topbar-action-btn" aria-label="Profile" onclick="navigateTo('profile.html')">👤</button>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <div class="scan-center">
+          <div class="scan-tabs-container">
+            <div class="scan-tabs" role="tablist">
+              <button class="scan-tab active" data-tab="scanTextTab" role="tab">💬 Text</button>
+              <button class="scan-tab" data-tab="scanLinkTab" role="tab">🔗 Link</button>
+              <button class="scan-tab" data-tab="scanQRTab" role="tab">📷 QR</button>
+              <button class="scan-tab" data-tab="scanImageTab" role="tab">🖼️ Image</button>
+              <button class="scan-tab" data-tab="scanVoiceTab" role="tab">🎤 Voice</button>
+              <button class="scan-tab" data-tab="scanVideoTab" role="tab">🎬 Video</button>
+              <button class="scan-tab" data-tab="scanFileTab" role="tab">📁 File</button>
+            </div>
+            <div class="scan-mobile-selector">
+              <select class="scan-mobile-select" id="scanMobileSelect" aria-label="Choose scanner">
+                <option value="scanTextTab">💬 Text</option>
+                <option value="scanLinkTab">🔗 Link</option>
+                <option value="scanQRTab">📷 QR</option>
+                <option value="scanImageTab">🖼️ Image</option>
+                <option value="scanVoiceTab">🎤 Voice</option>
+                <option value="scanVideoTab">🎬 Video</option>
+                <option value="scanFileTab">📁 File</option>
+              </select>
+            </div>
+
+            <div class="scan-panel active" id="scanTextTab" role="tabpanel">
+              <div class="scan-title">Text Message Analysis</div>
+              <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Paste a suspicious message, SMS, or email to analyze for scam indicators.</p>
+              <div class="form-group">
+                <textarea class="form-textarea" id="scanText" placeholder="Paste the suspicious message here..." rows="6" aria-label="Message to analyze"></textarea>
+              </div>
+              <button class="btn btn-primary" id="analyzeTextBtn">🔍 Analyze Message</button>
+              <div id="textScanResult"><div class="scan-result-empty">🔍 Submit content to scan for threats</div></div>
+            </div>
+
+            <div class="scan-panel" id="scanLinkTab" role="tabpanel">
+              <div class="scan-title">Link / URL Scanner</div>
+              <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Enter a URL to check if it's a phishing or malicious link.</p>
+              <div class="form-group">
+                <input type="url" class="form-input" id="scanUrl" placeholder="https://example.com" aria-label="URL to scan">
+              </div>
+              <button class="btn btn-primary" id="analyzeUrlBtn">🔗 Scan URL</button>
+              <div id="linkScanResult"><div class="scan-result-empty">🔍 Submit content to scan for threats</div></div>
+            </div>
+
+            <div class="scan-panel" id="scanQRTab" role="tabpanel">
+              <div class="scan-title">QR Code Scanner</div>
+              <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Upload a QR code image to check if it leads to a malicious site.</p>
+              <div class="qr-viewport">
+                <div class="qr-placeholder">
+                  <div class="qr-icon">📱</div>
+                  <div>Upload QR code image</div>
+                </div>
+                <div class="qr-corner tl"></div>
+                <div class="qr-corner tr"></div>
+                <div class="qr-corner bl"></div>
+                <div class="qr-corner br"></div>
+              </div>
+              <div class="file-upload" style="margin-top:12px;">
+                <input type="file" id="qrUpload" accept="image/*" style="display:none;" aria-label="Upload QR code image">
+                <div onclick="document.getElementById('qrUpload').click()">
+                  <div class="upload-icon">📷</div>
+                  <div class="upload-text">Click to upload QR code image</div>
+                  <div class="upload-hint">Supports PNG, JPG, WEBP</div>
+                </div>
+              </div>
+              <div id="qrScanResult"><div class="scan-result-empty">🔍 Submit content to scan for threats</div></div>
+            </div>
+
+            <div class="scan-panel" id="scanImageTab" role="tabpanel">
+              <div class="scan-title">Image Scanner</div>
+              <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Upload an image to extract and analyze text for scam indicators (simulated OCR).</p>
+              <div class="file-upload">
+                <input type="file" id="imageUpload" accept="image/*" style="display:none;" aria-label="Upload image">
+                <div onclick="document.getElementById('imageUpload').click()">
+                  <div class="upload-icon">🖼️</div>
+                  <div class="upload-text">Click to upload image</div>
+                  <div class="upload-hint">Supports PNG, JPG, WEBP, GIF</div>
+                </div>
+              </div>
+              <div class="image-preview-container" id="imagePreview"></div>
+              <div id="ocrResult"></div>
+              <div id="imageScanResult"><div class="scan-result-empty">🔍 Submit content to scan for threats</div></div>
+            </div>
+
+            <div class="scan-panel" id="scanVoiceTab" role="tabpanel">
+              <div class="scan-title">Voice / Audio Scanner</div>
+              <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Upload an audio file to analyze for scam indicators (simulated transcription).</p>
+              <div class="file-upload">
+                <input type="file" id="voiceUpload" accept="audio/*" style="display:none;" aria-label="Upload audio">
+                <div onclick="document.getElementById('voiceUpload').click()">
+                  <div class="upload-icon">🎤</div>
+                  <div class="upload-text">Click to upload audio file</div>
+                  <div class="upload-hint">Supports MP3, WAV, OGG, M4A</div>
+                </div>
+              </div>
+              <div class="voice-wave"><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div></div>
+              <div id="voiceTranscript"></div>
+              <div id="voiceScanResult"><div class="scan-result-empty">🔍 Submit content to scan for threats</div></div>
+            </div>
+
+            <div class="scan-panel" id="scanVideoTab" role="tabpanel">
+              <div class="scan-title">Video Scanner</div>
+              <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Upload a video file to extract and analyze content (simulated analysis).</p>
+              <div class="file-upload">
+                <input type="file" id="videoUpload" accept="video/*" style="display:none;" aria-label="Upload video">
+                <div onclick="document.getElementById('videoUpload').click()">
+                  <div class="upload-icon">🎬</div>
+                  <div class="upload-text">Click to upload video</div>
+                  <div class="upload-hint">Supports MP4, AVI, MOV, MKV</div>
+                </div>
+              </div>
+              <div class="video-preview-container">
+                <div class="video-frame">🎬</div>
+                <div class="video-overlay">
+                  <span>Frame preview</span>
+                  <span>00:00</span>
+                </div>
+              </div>
+              <div id="videoSubtitles"></div>
+              <div id="videoScanResult"><div class="scan-result-empty">🔍 Submit content to scan for threats</div></div>
+            </div>
+
+            <div class="scan-panel" id="scanFileTab" role="tabpanel">
+              <div class="scan-title">File Scanner</div>
+              <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">Upload a file to check for malware and suspicious elements.</p>
+              <div class="file-list-grid">
+                <div class="file-type-option" onclick="document.getElementById('fileUpload').click()"><div class="ft-icon">📄</div>PDF</div>
+                <div class="file-type-option" onclick="document.getElementById('fileUpload').click()"><div class="ft-icon">📝</div>DOCX</div>
+                <div class="file-type-option" onclick="document.getElementById('fileUpload').click()"><div class="ft-icon">📊</div>XLSX</div>
+                <div class="file-type-option" onclick="document.getElementById('fileUpload').click()"><div class="ft-icon">📽️</div>PPTX</div>
+                <div class="file-type-option" onclick="document.getElementById('fileUpload').click()"><div class="ft-icon">📦</div>ZIP</div>
+                <div class="file-type-option" onclick="document.getElementById('fileUpload').click()"><div class="ft-icon">🖼️</div>PNG</div>
+                <div class="file-type-option" onclick="document.getElementById('fileUpload').click()"><div class="ft-icon">🖼️</div>JPG</div>
+              </div>
+              <div class="file-upload">
+                <input type="file" id="fileUpload" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.zip,.rar,.png,.jpg,.jpeg,.gif" style="display:none;" aria-label="Upload file">
+                <div onclick="document.getElementById('fileUpload').click()">
+                  <div class="upload-icon">📁</div>
+                  <div class="upload-text">Click to upload file</div>
+                  <div class="upload-hint">PDF, DOCX, XLSX, PPTX, ZIP, PNG, JPG</div>
+                </div>
+              </div>
+              <div id="filePreview"></div>
+              <div id="fileInfo"></div>
+              <div id="fileScanResult"><div class="scan-result-empty">🔍 Submit content to scan for threats</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="floating-shield" id="floatingShield">
+    <div class="shield-icon safe" role="button" tabindex="0" aria-label="Security status">🛡️<span class="shield-badge" id="shieldMainBadge">3</span></div>
+    <div class="shield-panel">
+      <div class="shield-panel-header">
+        <div class="shield-status"><div class="status-dot safe"></div><span class="status-text">All Safe</span></div>
+        <button class="shield-close btn btn-ghost btn-sm">✕</button>
+      </div>
+      <div class="shield-stat"><span class="stat-label">Threats Today</span><span class="stat-value" id="shieldThreatCount">0</span></div>
+      <div class="shield-actions"><button class="btn btn-primary btn-sm shield-action-btn" onclick="navigateTo('scan.html')">Quick Scan</button></div>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container" role="alert" aria-live="polite"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/scan.js"></script>
+</body>
+</html>

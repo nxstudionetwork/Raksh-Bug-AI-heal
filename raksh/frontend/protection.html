@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protection - RAKSH</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/protection.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+  <div id="appLoader" class="app-loader">
+    <div class="loader-content">
+      <div class="loader-shield">🛡️</div>
+      <div class="loader-brand">RAKSH</div>
+      <div class="loader-tagline">AI Security Guardian</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+      <div class="loader-text" id="loaderText">Initializing protection...</div>
+    </div>
+  </div>
+  <div class="sidebar-overlay"></div>
+<div class="app-container">
+  <aside class="sidebar" role="navigation" aria-label="Main navigation">
+    <div class="sidebar-brand"><div class="logo-icon">S</div><span class="brand-text">RAKSH</span><button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">◀</button></div>
+    <nav class="sidebar-nav">
+      <div class="nav-section"><div class="nav-section-title">Main</div>
+        <div class="nav-item" data-href="dashboard.html"><span class="nav-icon">📊</span><span class="nav-label">Dashboard</span><span class="tooltip">Dashboard</span></div>
+        <div class="nav-item active" data-href="protection.html"><span class="nav-icon">🛡️</span><span class="nav-label">Protection</span><span class="tooltip">Protection</span></div>
+        <div class="nav-item" data-href="scan.html"><span class="nav-icon">🔍</span><span class="nav-label">Scanner</span><span class="tooltip">Scanner</span></div>
+        <div class="nav-item" data-href="scanned-messages.html"><span class="nav-icon">📋</span><span class="nav-label">Scanned Messages</span><span class="tooltip">Scanned Messages</span></div>
+        <div class="nav-item" data-href="security-center.html"><span class="nav-icon">🔒</span><span class="nav-label">Security Center</span><span class="nav-badge" id="navCenterBadge">12</span><span class="tooltip">Security Center</span></div>
+        <div class="nav-item" data-href="ai-assistant.html"><span class="nav-icon">🤖</span><span class="nav-label">AI Assistant</span><span class="tooltip">AI Assistant</span></div>
+      </div>
+      <div class="nav-section"><div class="nav-section-title">Account</div>
+        <div class="nav-item" data-href="notifications.html"><span class="nav-icon">🔔</span><span class="nav-label">Notifications</span><span class="nav-badge" id="navNotifBadge">3</span><span class="tooltip">Notifications</span></div>
+        <div class="nav-item" data-href="profile.html"><span class="nav-icon">👤</span><span class="nav-label">Profile</span><span class="tooltip">Profile</span></div>
+        <div class="nav-item" data-href="settings.html"><span class="nav-icon">⚙️</span><span class="nav-label">Settings</span><span class="tooltip">Settings</span></div>
+      </div>
+      <div class="nav-section"><div class="nav-section-title">Support</div>
+        <div class="nav-item" data-href="help.html"><span class="nav-icon">❓</span><span class="nav-label">Help Center</span><span class="tooltip">Help Center</span></div>
+        <div class="nav-item" data-href="about.html"><span class="nav-icon">ℹ️</span><span class="nav-label">About</span><span class="tooltip">About</span></div>
+      </div>
+    </nav>
+    <div class="sidebar-footer"><div class="branding-footer">IFX Group</div></div>
+  </aside>
+
+  <main class="main-content" id="mainContent" role="main">
+    <header class="topbar" role="banner">
+      <div class="topbar-left">
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle sidebar">☰</button>
+        <h1 class="page-title">Protection Overview</h1>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-search">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search..." aria-label="Search">
+        </div>
+        <button class="topbar-action-btn" id="settingsBtn" aria-label="Settings">⚙️</button>
+        <button class="topbar-action-btn" id="notifBtn" aria-label="Notifications">🔔<span class="badge" id="notifBadge">3</span></button>
+        <button class="topbar-action-btn" aria-label="Profile" onclick="navigateTo('profile.html')">👤</button>
+      </div>
+    </header>
+
+    <div class="page-content" id="protectionPage">
+      <!-- Status Bar -->
+      <div class="sticky-header">
+      <div class="glass-card prot-status-bar">
+        <div class="prot-status-item" id="protStatusProtection">
+          <span class="status-dot safe pulse"></span>
+          <span class="status-label">Protection:</span>
+          <span class="status-value" id="protProtectionStatus">Active</span>
+        </div>
+        <div class="prot-status-item" id="protStatusAI">
+          <span class="status-dot safe pulse-ai"></span>
+          <span class="status-label">AI Engine:</span>
+          <span class="status-value" id="protAIStatus">Online</span>
+        </div>
+        <div class="prot-status-item" id="protStatusHealth">
+          <span class="status-label">Health Score:</span>
+          <span class="status-value big" id="protHealthScore">87%</span>
+        </div>
+        <div class="prot-status-item" id="protStatusToday">
+          <span class="status-label">Today:</span>
+          <span class="status-value" id="protTodaySummary">128 scans, 3 threats, 0 critical</span>
+        </div>
+        <div class="prot-status-item" id="protStatusThreats">
+          <span class="status-label">Active Campaigns:</span>
+          <span class="status-value" id="protActiveThreats">7</span>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="navigateTo('scan.html')">+ Quick Scan</button>
+      </div>
+
+      <!-- Tab Bar -->
+      <div class="prot-tabs">
+        <button class="prot-tab active" data-panel="protOverview">📊 Overview</button>
+        <button class="prot-tab" data-panel="protReports">📑 Reports</button>
+        <button class="prot-tab" data-panel="protKnowledge">📚 Knowledge Center</button>
+      </div>
+      </div>
+
+      <!-- ======================== OVERVIEW TAB ======================== -->
+      <div class="prot-panel active" id="protOverview">
+        <div class="prot-overview-layout">
+
+          <!-- Left Column -->
+          <div class="prot-overview-left">
+
+            <!-- SOC Metric Cards -->
+            <div class="prot-metric-grid">
+              <div class="glass-card prot-metric-card">
+                <div class="prot-metric-icon danger">🚨</div>
+                <div class="prot-metric-value"><span id="protMetricThreats">0</span></div>
+                <div class="prot-metric-label">Active Threats</div>
+                <div class="prot-metric-trend up" id="protMetricThreatsTrend">↑ 12%</div>
+              </div>
+              <div class="glass-card prot-metric-card">
+                <div class="prot-metric-icon primary">🔍</div>
+                <div class="prot-metric-value"><span id="protMetricScans">0</span></div>
+                <div class="prot-metric-label">Scans Today</div>
+                <div class="prot-metric-trend up">↑ 8%</div>
+              </div>
+              <div class="glass-card prot-metric-card">
+                <div class="prot-metric-icon success">🛡️</div>
+                <div class="prot-metric-value"><span id="protMetricBlocked">0</span></div>
+                <div class="prot-metric-label">Threats Blocked</div>
+                <div class="prot-metric-trend up">↑ 5%</div>
+              </div>
+              <div class="glass-card prot-metric-card">
+                <div class="prot-metric-icon secondary">✅</div>
+                <div class="prot-metric-value"><span id="protMetricSafe">0</span></div>
+                <div class="prot-metric-label">Safe Messages</div>
+                <div class="prot-metric-trend up">↑ 3%</div>
+              </div>
+            </div>
+
+            <div class="prot-sub-grid">
+            <!-- Connected Apps -->
+            <div class="glass-card prot-section-card">
+              <div class="prot-section-title">🔌 Connected Apps</div>
+              <div id="protConnectedApps"></div>
+            </div>
+
+            <!-- Activity Feed -->
+            <div class="glass-card prot-section-card">
+              <div class="prot-section-title">⏱️ Activity Feed</div>
+              <div class="prot-activity-feed" id="protActivityFeed"></div>
+            </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column -->
+          <div class="prot-overview-right">
+
+            <!-- Security Health Score -->
+            <div class="glass-card prot-section-card">
+              <div class="prot-section-title">🛡️ Security Health</div>
+              <div class="prot-health-ring-wrap" id="protHealthRing">
+                <svg width="160" height="160" viewBox="0 0 160 160">
+                  <circle cx="80" cy="80" r="65" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="10"/>
+                  <circle class="prot-health-circle" cx="80" cy="80" r="65" fill="none" stroke="#22c55e" stroke-width="10" stroke-linecap="round" stroke-dasharray="408.4" stroke-dashoffset="81.7" transform="rotate(-90,80,80)"/>
+                </svg>
+                <div class="prot-health-text" id="protHealthRingText">87</div>
+              </div>
+              <div class="prot-health-label">Overall Security Health</div>
+              <div class="prot-health-sub" id="protHealthSub">Good — 3 recommendations pending</div>
+            </div>
+
+            <!-- Daily Security Tip -->
+            <div class="glass-card prot-section-card prot-tip-card">
+              <div class="prot-section-title">💡 Daily Security Tip</div>
+              <div class="prot-tip-text" id="protDailyTip"></div>
+            </div>
+
+            <!-- Recent Alerts -->
+            <div class="glass-card prot-section-card">
+              <div class="prot-section-title">🔔 Recent Alerts</div>
+              <div class="prot-alerts-list" id="protAlerts"></div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="glass-card prot-section-card">
+              <div class="prot-section-title">📋 Recommendations</div>
+              <div class="prot-recommendations-list" id="protRecommendations"></div>
+            </div>
+
+            <!-- Trending Threats -->
+            <div class="glass-card prot-section-card">
+              <div class="prot-section-title">📈 Trending Threats</div>
+              <div class="prot-trending-list" id="protTrendingThreats"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ======================== REPORTS TAB ======================== -->
+      <div class="prot-panel" id="protReports">
+
+        <!-- Threat Summary Cards -->
+        <div class="prot-report-summaries" id="protReportSummaries">
+          <div class="glass-card prot-summary-card"><div class="prot-summary-count" id="protSumTotal">0</div><div class="prot-summary-label">Total Reports</div></div>
+          <div class="glass-card prot-summary-card"><div class="prot-summary-count danger" id="protSumCritical">0</div><div class="prot-summary-label">Critical Threats</div></div>
+          <div class="glass-card prot-summary-card"><div class="prot-summary-count success" id="protSumSafe">0</div><div class="prot-summary-label">Safe Messages</div></div>
+        </div>
+
+        <!-- Search + Filters -->
+        <div class="glass-card prot-report-toolbar">
+          <div class="prot-report-search-row">
+            <div class="prot-report-search">
+              <span>🔍</span>
+              <input type="text" id="protReportSearch" placeholder="Search reports..." aria-label="Search reports">
+            </div>
+            <div class="prot-report-actions">
+              <input type="date" id="protReportDateFrom" class="prot-date-input" title="From date">
+              <input type="date" id="protReportDateTo" class="prot-date-input" title="To date">
+              <button class="btn btn-sm btn-secondary" id="protExportPDF">📥 PDF Document</button>
+              <button class="btn btn-sm btn-secondary" id="protExportTXT">📥 Text Document</button>
+              <button class="btn btn-sm btn-secondary" id="protToggleView" title="Toggle timeline view">📅 Timeline</button>
+            </div>
+          </div>
+          <div class="prot-filter-chips" id="protReportFilters">
+            <span class="prot-chip active" data-filter="all">All</span>
+            <span class="prot-chip" data-filter="Phishing">Phishing</span>
+            <span class="prot-chip" data-filter="Banking">Banking</span>
+            <span class="prot-chip" data-filter="Scam">Scams</span>
+            <span class="prot-chip" data-filter="Safe">Safe</span>
+            <span class="prot-chip" data-filter="QR">QR</span>
+            <span class="prot-chip" data-filter="Job">Job</span>
+            <span class="prot-chip" data-filter="Delivery">Delivery</span>
+            <span class="prot-chip" data-filter="Investment">Investment</span>
+          </div>
+        </div>
+
+        <!-- Table View -->
+        <div class="glass-card prot-report-table-wrap" id="protReportTableView">
+          <div class="prot-report-table-scroll">
+            <table class="data-table">
+              <thead><tr><th>Date</th><th>Type</th><th>Content Preview</th><th>Risk Score</th><th>Severity</th><th>Actions</th></tr></thead>
+              <tbody id="protReportBody"></tbody>
+            </table>
+          </div>
+          <div class="prot-pagination" id="protPagination"></div>
+        </div>
+
+        <!-- Timeline View -->
+        <div class="glass-card prot-report-timeline" id="protReportTimeline" style="display:none;">
+          <div class="prot-timeline-list" id="protTimelineList"></div>
+          <div class="prot-pagination" id="protTimelinePagination"></div>
+        </div>
+      </div>
+
+      <!-- ======================== KNOWLEDGE CENTER TAB ======================== -->
+      <div class="prot-panel" id="protKnowledge">
+
+        <!-- Search + Filters -->
+        <div class="glass-card prot-knowledge-toolbar">
+          <div class="prot-knowledge-search">
+            <span>🔍</span>
+            <input type="text" id="protKnowledgeSearch" placeholder="Search articles..." aria-label="Search articles">
+          </div>
+          <div class="prot-filter-chips" id="protKnowledgeFilters">
+            <span class="prot-chip active" data-cat="all">All</span>
+            <span class="prot-chip" data-cat="Scam Awareness">Scam Awareness</span>
+            <span class="prot-chip" data-cat="Banking Fraud">Banking Fraud</span>
+            <span class="prot-chip" data-cat="QR Scams">QR Scams</span>
+            <span class="prot-chip" data-cat="Fake Jobs">Fake Jobs</span>
+            <span class="prot-chip" data-cat="AI Scams">AI Scams</span>
+            <span class="prot-chip" data-cat="Crypto Scams">Crypto</span>
+            <span class="prot-chip" data-cat="Identity Theft">Identity Theft</span>
+            <span class="prot-chip" data-cat="Security Guides">Security Guides</span>
+            <span class="prot-chip" data-cat="Delivery Scams">Delivery</span>
+            <span class="prot-chip" data-cat="Social Media">Social Media</span>
+          </div>
+        </div>
+
+        <!-- Bookmarks Bar -->
+        <div class="glass-card prot-bookmarks-bar" id="protBookmarksBar" style="display:none;">
+          <div class="prot-section-title">🔖 Bookmarked Articles</div>
+          <div id="protBookmarksList"></div>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="prot-knowledge-grid" id="protKnowledgeGrid"></div>
+
+        <!-- Empty State -->
+        <div class="prot-knowledge-empty" id="protKnowledgeEmpty" style="display:none;">
+          <div class="empty-state"><div class="empty-icon">📚</div><h3>No articles found</h3><p>Try adjusting your search or filter criteria</p></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<div class="floating-shield" id="floatingShield">
+  <div class="shield-icon safe" role="button" tabindex="0" aria-label="Security status">🛡️<span class="shield-badge" id="shieldMainBadge">3</span></div>
+  <div class="shield-panel">
+    <div class="shield-panel-header">
+      <div class="shield-status"><div class="status-dot safe"></div><span class="status-text">All Safe</span></div>
+      <button class="shield-close btn btn-ghost btn-sm">✕</button>
+    </div>
+    <div class="shield-stat"><span class="stat-label">Threats Today</span><span class="stat-value" id="shieldThreatCount">0</span></div>
+    <div class="shield-actions"><button class="btn btn-primary btn-sm shield-action-btn" onclick="navigateTo('scan.html')">Quick Scan</button></div>
+  </div>
+</div>
+<div id="toastContainer" class="toast-container" role="alert" aria-live="polite"></div>
+
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/protection.js"></script>
+</body>
+</html>

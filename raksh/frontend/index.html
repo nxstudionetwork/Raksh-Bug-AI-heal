@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RAKSH - AI-Powered Digital Security Guardian. Protect yourself from scams, phishing, and fraud.">
+  <title>RAKSH - AI Security Guardian</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+  <div id="appLoader" class="app-loader">
+    <div class="loader-content">
+      <div class="loader-shield">🛡️</div>
+      <div class="loader-brand">RAKSH</div>
+      <div class="loader-tagline">AI Security Guardian</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+      <div class="loader-text" id="loaderText">Initializing protection...</div>
+    </div>
+  </div>
+  <div class="animated-bg">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+  </div>
+
+  <div class="login-page" id="mainContent">
+    <div class="auth-container">
+      <div class="auth-card">
+        <div class="auth-logo">
+          <div class="logo-text">🛡️ RAKSH</div>
+        </div>
+        <div style="text-align:center;margin-bottom:32px;">
+          <h1 class="auth-title">Your AI Security Guardian</h1>
+          <p class="auth-subtitle">Protect yourself from scams, phishing, fraud, and social engineering with real-time AI-powered analysis.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
+          <div class="glass-card" style="text-align:center;padding:16px;">
+            <div style="font-size:28px;margin-bottom:8px;">🔍</div>
+            <div style="font-size:13px;font-weight:600;">Scan Messages</div>
+            <div style="font-size:11px;color:var(--text-muted);">AI-powered text analysis</div>
+          </div>
+          <div class="glass-card" style="text-align:center;padding:16px;">
+            <div style="font-size:28px;margin-bottom:8px;">🔗</div>
+            <div style="font-size:13px;font-weight:600;">Check Links</div>
+            <div style="font-size:11px;color:var(--text-muted);">URL safety verification</div>
+          </div>
+          <div class="glass-card" style="text-align:center;padding:16px;">
+            <div style="font-size:28px;margin-bottom:8px;">📷</div>
+            <div style="font-size:13px;font-weight:600;">QR Scanner</div>
+            <div style="font-size:11px;color:var(--text-muted);">Fake code detection</div>
+          </div>
+          <div class="glass-card" style="text-align:center;padding:16px;">
+            <div style="font-size:28px;margin-bottom:8px;">📁</div>
+            <div style="font-size:13px;font-weight:600;">File Analysis</div>
+            <div style="font-size:11px;color:var(--text-muted);">Malware risk assessment</div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="login.html" class="btn btn-primary btn-lg" style="text-align:center;width:100%;">Login</a>
+          <a href="signup.html" class="btn btn-secondary btn-lg" style="text-align:center;width:100%;">Create Account</a>
+        </div>
+
+        <div class="auth-footer">
+          Protected by RAKSH AI Engine v2.0
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container" role="alert" aria-live="polite"></div>
+
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

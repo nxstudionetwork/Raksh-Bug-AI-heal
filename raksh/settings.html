@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - RAKSH</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/settings.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+  <div id="appLoader" class="app-loader">
+    <div class="loader-content">
+      <div class="loader-shield">🛡️</div>
+      <div class="loader-brand">RAKSH</div>
+      <div class="loader-tagline">AI Security Guardian</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+      <div class="loader-text" id="loaderText">Initializing protection...</div>
+    </div>
+  </div>
+  <div class="sidebar-overlay"></div>
+  <div class="app-container">
+    <aside class="sidebar" role="navigation" aria-label="Main navigation">
+      <div class="sidebar-brand"><div class="logo-icon">S</div><span class="brand-text">RAKSH</span><button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">◀</button></div>
+      <nav class="sidebar-nav">
+        <div class="nav-section"><div class="nav-section-title">Main</div>
+          <div class="nav-item" data-href="dashboard.html"><span class="nav-icon">📊</span><span class="nav-label">Dashboard</span><span class="tooltip">Dashboard</span></div>
+          <div class="nav-item" data-href="protection.html"><span class="nav-icon">🛡️</span><span class="nav-label">Protection</span><span class="tooltip">Protection</span></div>
+          <div class="nav-item" data-href="scan.html"><span class="nav-icon">🔍</span><span class="nav-label">Scanner</span><span class="tooltip">Scanner</span></div>
+          <div class="nav-item" data-href="scanned-messages.html"><span class="nav-icon">📋</span><span class="nav-label">Scanned Messages</span><span class="tooltip">Scanned Messages</span></div>
+          <div class="nav-item" data-href="security-center.html"><span class="nav-icon">🔒</span><span class="nav-label">Security Center</span><span class="nav-badge" id="navCenterBadge">12</span><span class="tooltip">Security Center</span></div>
+          <div class="nav-item" data-href="ai-assistant.html"><span class="nav-icon">🤖</span><span class="nav-label">AI Assistant</span><span class="tooltip">AI Assistant</span></div>
+        </div>
+        <div class="nav-section"><div class="nav-section-title">Account</div>
+          <div class="nav-item" data-href="notifications.html"><span class="nav-icon">🔔</span><span class="nav-label">Notifications</span><span class="nav-badge" id="navNotifBadge">3</span><span class="tooltip">Notifications</span></div>
+          <div class="nav-item" data-href="profile.html"><span class="nav-icon">👤</span><span class="nav-label">Profile</span><span class="tooltip">Profile</span></div>
+          <div class="nav-item active" data-href="settings.html"><span class="nav-icon">⚙️</span><span class="nav-label">Settings</span><span class="tooltip">Settings</span></div>
+        </div>
+        <div class="nav-section"><div class="nav-section-title">Support</div>
+          <div class="nav-item" data-href="help.html"><span class="nav-icon">❓</span><span class="nav-label">Help Center</span><span class="tooltip">Help Center</span></div>
+          <div class="nav-item" data-href="about.html"><span class="nav-icon">ℹ️</span><span class="nav-label">About</span><span class="tooltip">About</span></div>
+        </div>
+      </nav>
+      <div class="sidebar-footer"><div class="branding-footer">IFX Group</div></div>
+    </aside>
+
+    <main class="main-content" id="mainContent" role="main">
+      <header class="topbar" role="banner">
+        <div class="topbar-left"><button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle sidebar">☰</button><h1 class="page-title">Settings</h1></div>
+        <div class="topbar-right">
+          <div class="topbar-search" style="transition:border-color 0.2s ease,box-shadow 0.2s ease;"><span class="search-icon">🔍</span><input type="text" placeholder="Search..." aria-label="Search"></div>
+          <button class="topbar-action-btn" id="settingsBtn" aria-label="Settings">⚙️</button>
+          <button class="topbar-action-btn" id="notifBtn" aria-label="Notifications">🔔<span class="badge" id="notifBadge">3</span></button>
+          <button class="topbar-action-btn" onclick="navigateTo('profile.html')" aria-label="Profile">👤</button>
+        </div>
+      </header>
+
+      <div class="page-content" id="settingsPage">
+
+        <div class="settings-section">
+          <h3 class="section-title">Account Settings</h3>
+          <div class="glass-card">
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Username</div><div class="item-desc">Your display name</div></div>
+              <input class="form-input settings-input" id="settingsUsername" value="RakshUser">
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Email</div><div class="item-desc">Your registered email</div></div>
+              <input class="form-input settings-input" id="settingsEmail" value="user@raksh.security">
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Phone</div><div class="item-desc">Contact number</div></div>
+              <input class="form-input settings-input" id="settingsPhone" value="+91 98765 43210">
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Password</div><div class="item-desc">Change your account password</div></div>
+              <button class="btn btn-sm btn-secondary" id="changePasswordBtn">Change Password</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h3 class="section-title">Security</h3>
+          <div class="glass-card">
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">AI Protection Status</div><div class="item-desc">Enable AI-powered threat detection</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="aiProtectionToggle" checked><span class="slider"></span></label>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Privacy Mode</div><div class="item-desc">Hide sensitive info from dashboard</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="privacyToggle"><span class="slider"></span></label>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Auto Scan</div><div class="item-desc">Automatically scan incoming messages</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="autoScanToggle" checked><span class="slider"></span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h3 class="section-title">Connected Apps</h3>
+          <div class="glass-card">
+            <div class="connected-apps-grid" id="connectedAppsGrid"></div>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h3 class="section-title">Notifications</h3>
+          <div class="glass-card">
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Enable Notifications</div><div class="item-desc">Receive security alerts and updates</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="enableNotifToggle" checked><span class="slider"></span></label>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Critical Alerts</div><div class="item-desc">Immediate alerts for critical threats</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="criticalAlertToggle" checked><span class="slider"></span></label>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Warning Alerts</div><div class="item-desc">Notifications for warning-level threats</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="warningAlertToggle" checked><span class="slider"></span></label>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Sound</div><div class="item-desc">Play sound on alerts</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="soundToggle" checked><span class="slider"></span></label>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Desktop Notifications</div><div class="item-desc">Show desktop push notifications</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="desktopNotifToggle"><span class="slider"></span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h3 class="section-title">General Settings</h3>
+          <div class="glass-card">
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Language</div><div class="item-desc">Choose your preferred language</div></div>
+              <select class="form-select settings-select" id="languageSelect">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="ta">Tamil</option>
+                <option value="te">Telugu</option>
+                <option value="bn">Bengali</option>
+                <option value="mr">Marathi</option>
+              </select>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Time Format</div><div class="item-desc">12-hour or 24-hour display</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="timeFormatToggle"><span class="slider"></span></label>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Date Format</div><div class="item-desc">Choose your date display format</div></div>
+              <select class="form-select settings-select" id="dateFormatSelect">
+                <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+              </select>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Auto Save</div><div class="item-desc">Automatically save changes</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="autoSaveToggle" checked><span class="slider"></span></label>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Reset Preferences</div><div class="item-desc">Restore all preferences to default values</div></div>
+              <button class="btn btn-sm btn-danger" id="resetPrefsBtn">Reset Preferences</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h3 class="section-title">Security Preferences</h3>
+          <div class="glass-card">
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Auto Scan</div><div class="item-desc">Automatically scan incoming messages</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="secAutoScanToggle" checked><span class="slider"></span></label>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Smart Notifications</div><div class="item-desc">AI-powered smart notification filtering</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="smartNotifToggle" checked><span class="slider"></span></label>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Safe Browsing</div><div class="item-desc">Block malicious websites automatically</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="safeBrowsingToggle" checked><span class="slider"></span></label>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">AI Detection Level</div><div class="item-desc">Sensitivity of AI threat detection</div></div>
+              <select class="form-select settings-select" id="aiDetectionLevel">
+                <option value="low">Low</option>
+                <option value="balanced" selected>Balanced</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Privacy Mode</div><div class="item-desc">Hide sensitive information from dashboard</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="secPrivacyToggle"><span class="slider"></span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h3 class="section-title">Accessibility</h3>
+          <div class="glass-card">
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Text Size</div><div class="item-desc">Adjust text size across the app</div></div>
+              <select class="form-select settings-select" id="textSizeSelect">
+                <option value="small">Small</option>
+                <option value="medium" selected>Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Reduce Motion</div><div class="item-desc">Minimize animations and transitions</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="reduceMotionToggle"><span class="slider"></span></label>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">High Contrast Mode</div><div class="item-desc">Increase contrast for better visibility</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="highContrastToggle"><span class="slider"></span></label>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Keyboard Navigation</div><div class="item-desc">Enable full keyboard navigation</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="keyboardNavToggle" checked><span class="slider"></span></label>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Screen Reader Mode</div><div class="item-desc">Optimize for screen reader compatibility</div></div>
+              <label class="toggle-switch"><input type="checkbox" id="screenReaderToggle"><span class="slider"></span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h3 class="section-title">Data Management</h3>
+          <div class="glass-card">
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Export Scan History (PDF)</div><div class="item-desc">Download scan history as PDF document</div></div>
+              <button class="btn btn-sm btn-secondary" id="exportPdfBtn">Export PDF</button>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Export Scan History (TXT)</div><div class="item-desc">Download scan history as text file</div></div>
+              <button class="btn btn-sm btn-secondary" id="exportTxtBtn">Export TXT</button>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Clear Local Data</div><div class="item-desc">Remove all scan history and local data</div></div>
+              <button class="btn btn-sm btn-danger" id="clearLocalDataBtn">Clear Data</button>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Backup Settings</div><div class="item-desc">Save settings to a backup file</div></div>
+              <button class="btn btn-sm btn-secondary" id="backupSettingsBtn">Backup Settings</button>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Restore Settings</div><div class="item-desc">Restore settings from a backup file</div></div>
+              <button class="btn btn-sm btn-secondary" id="restoreSettingsBtn">Restore Settings</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h3 class="section-title">About</h3>
+          <div class="glass-card">
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">App Version</div><div class="item-desc">Current RAKSH version</div></div>
+              <span class="about-info-value">2.0.0</span>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">AI Engine Version</div><div class="item-desc">AI detection engine version</div></div>
+              <span class="about-info-value">RAKSH AI v2.1</span>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Build Version</div><div class="item-desc">Build identifier</div></div>
+              <span class="about-info-value">2026.07.05-1000</span>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Terms & Privacy</div><div class="item-desc">View terms of service and privacy policy</div></div>
+              <button class="btn btn-sm btn-ghost" id="termsLink">Open</button>
+            </div>
+            <div class="settings-item">
+              <div class="item-info"><div class="item-label">Contact Support</div><div class="item-desc">Get help from the RAKSH team</div></div>
+              <button class="btn btn-sm btn-ghost" id="supportLink">Contact</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <div class="floating-shield" id="floatingShield">
+    <div class="shield-icon safe" role="button" tabindex="0" aria-label="Security status">🛡️<span class="shield-badge" id="shieldMainBadge">3</span></div>
+    <div class="shield-panel">
+      <div class="shield-panel-header">
+        <div class="shield-status"><div class="status-dot safe"></div><span class="status-text">All Safe</span></div>
+        <button class="shield-close btn btn-ghost btn-sm">✕</button>
+      </div>
+      <div class="shield-stat"><span class="stat-label">Threats Today</span><span class="stat-value" id="shieldThreatCount">0</span></div>
+      <div class="shield-actions"><button class="btn btn-primary btn-sm shield-action-btn" onclick="navigateTo('scan.html')">Quick Scan</button></div>
+    </div>
+  </div>
+  <div id="toastContainer" class="toast-container" role="alert" aria-live="polite"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/settings.js"></script>
+
+</body>
+</html>

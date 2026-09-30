@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+logs/*.log
+alembic/versions/
+models/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.DS_Store

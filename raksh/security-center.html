@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Center - RAKSH</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/security-center.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+  <div id="appLoader" class="app-loader">
+    <div class="loader-content">
+      <div class="loader-shield">🛡️</div>
+      <div class="loader-brand">RAKSH</div>
+      <div class="loader-tagline">AI Security Guardian</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+      <div class="loader-text" id="loaderText">Initializing protection...</div>
+    </div>
+  </div>
+  <div class="sidebar-overlay"></div>
+  <div class="app-container">
+    <aside class="sidebar" role="navigation" aria-label="Main navigation">
+      <div class="sidebar-brand"><div class="logo-icon">S</div><span class="brand-text">RAKSH</span><button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">◀</button></div>
+      <nav class="sidebar-nav">
+        <div class="nav-section"><div class="nav-section-title">Main</div>
+          <div class="nav-item" data-href="dashboard.html"><span class="nav-icon">📊</span><span class="nav-label">Dashboard</span><span class="tooltip">Dashboard</span></div>
+          <div class="nav-item" data-href="protection.html"><span class="nav-icon">🛡️</span><span class="nav-label">Protection</span><span class="tooltip">Protection</span></div>
+          <div class="nav-item" data-href="scan.html"><span class="nav-icon">🔍</span><span class="nav-label">Scanner</span><span class="tooltip">Scanner</span></div>
+          <div class="nav-item" data-href="scanned-messages.html"><span class="nav-icon">📋</span><span class="nav-label">Scanned Messages</span><span class="tooltip">Scanned Messages</span></div>
+          <div class="nav-item active" data-href="security-center.html"><span class="nav-icon">🔒</span><span class="nav-label">Security Center</span><span class="nav-badge" id="navCenterBadge">12</span><span class="tooltip">Security Center</span></div>
+          <div class="nav-item" data-href="ai-assistant.html"><span class="nav-icon">🤖</span><span class="nav-label">AI Assistant</span><span class="tooltip">AI Assistant</span></div>
+        </div>
+        <div class="nav-section"><div class="nav-section-title">Account</div>
+          <div class="nav-item" data-href="notifications.html"><span class="nav-icon">🔔</span><span class="nav-label">Notifications</span><span class="nav-badge" id="navNotifBadge">3</span><span class="tooltip">Notifications</span></div>
+          <div class="nav-item" data-href="profile.html"><span class="nav-icon">👤</span><span class="nav-label">Profile</span><span class="tooltip">Profile</span></div>
+          <div class="nav-item" data-href="settings.html"><span class="nav-icon">⚙️</span><span class="nav-label">Settings</span><span class="tooltip">Settings</span></div>
+        </div>
+        <div class="nav-section"><div class="nav-section-title">Support</div>
+          <div class="nav-item" data-href="help.html"><span class="nav-icon">❓</span><span class="nav-label">Help Center</span><span class="tooltip">Help Center</span></div>
+          <div class="nav-item" data-href="about.html"><span class="nav-icon">ℹ️</span><span class="nav-label">About</span><span class="tooltip">About</span></div>
+        </div>
+      </nav>
+      <div class="sidebar-footer"><div class="branding-footer">IFX Group</div></div>
+    </aside>
+
+    <main class="main-content" id="mainContent" role="main">
+      <header class="topbar" role="banner">
+        <div class="topbar-left"><button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle sidebar">☰</button><h1 class="page-title">Security Center</h1></div>
+        <div class="topbar-right">
+          <div class="topbar-search"><span class="search-icon">🔍</span><input type="text" placeholder="Search..." aria-label="Search"></div>
+          <button class="topbar-action-btn" id="settingsBtn" aria-label="Settings">⚙️</button>
+          <button class="topbar-action-btn" id="notifBtn" aria-label="Notifications">🔔<span class="badge" id="notifBadge">3</span></button>
+          <button class="topbar-action-btn" onclick="navigateTo('profile.html')" aria-label="Profile">👤</button>
+        </div>
+      </header>
+
+      <div class="page-content" id="securityCenterPage">
+        <div class="sec-container">
+          <div class="sec-tabs sticky-header" role="tablist">
+            <button class="sec-tab active" data-tab="secFeedTab">🌐 Community Feed</button>
+            <button class="sec-tab" data-tab="secThreatTab">⚠️ Threat Intelligence</button>
+            <button class="sec-tab" data-tab="secScamTab">📋 Scam Database</button>
+            <button class="sec-tab" data-tab="secHistoryTab">🕐 Scan History</button>
+            <button class="sec-tab" data-tab="secNotifTab">🔔 Notifications</button>
+          </div>
+
+          <div id="secFeedTab" class="sec-panel active">
+            <div class="sec-feed-layout">
+              <div class="sec-feed-main">
+                <div class="sec-feed-topbar glass-card">
+                  <div class="sec-feed-filters">
+                    <button class="filter-tab active" data-feed-filter="forYou">For You</button>
+                    <button class="filter-tab" data-feed-filter="trending">Trending</button>
+                    <button class="filter-tab" data-feed-filter="latest">Latest</button>
+                    <button class="filter-tab" data-feed-filter="following">Following</button>
+                  </div>
+                  <button class="btn btn-primary btn-sm" id="newPostBtn">+ New Post</button>
+                </div>
+                <div id="secFeedPosts"></div>
+              </div>
+            </div>
+            <details class="sec-collapsible">
+              <summary class="sec-collapsible-summary"><span>⭐ Verified Experts</span><span class="collapse-icon">▼</span></summary>
+              <div id="secExpertsSidebar"></div>
+            </details>
+            <details class="sec-collapsible">
+              <summary class="sec-collapsible-summary"><span>🏆 Community Challenges</span><span class="collapse-icon">▼</span></summary>
+              <div id="secChallengesSidebar"></div>
+            </details>
+            <div id="secFeedChallenges"></div>
+          </div>
+
+          <div id="secThreatTab" class="sec-panel">
+            <div id="secThreatStats" class="threat-stats-row"></div>
+            <div class="glass-card">
+              <h4 class="sec-section-title">🚀 Latest Campaigns</h4>
+              <div id="secCampaignsTable"></div>
+            </div>
+            <div class="threat-cards-row">
+              <div class="glass-card">
+                <h4 class="sec-section-title">🎯 Top Attack Types</h4>
+                <div id="secAttackCards"></div>
+              </div>
+              <div class="glass-card">
+                <h4 class="sec-section-title">🌐 High-Risk Domains</h4>
+                <div id="secDomainsTable"></div>
+              </div>
+            </div>
+            <div class="threat-bottom-row">
+              <div class="glass-card">
+                <h4 class="sec-section-title">📅 Threat Timeline</h4>
+                <div id="secThreatTimeline"></div>
+              </div>
+              <div class="glass-card">
+                <h4 class="sec-section-title">📊 Attack Statistics</h4>
+                <div id="secAttackStats"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="secScamTab" class="sec-panel">
+            <div class="glass-card sec-scam-topbar">
+              <div class="sec-scam-search-row">
+                <input class="form-input" id="secScamSearch" placeholder="Search scam database...">
+                <div class="sec-scam-severity-filters">
+                  <button class="filter-tab active" data-scam-severity="all">All</button>
+                  <button class="filter-tab" data-scam-severity="Critical">Critical</button>
+                  <button class="filter-tab" data-scam-severity="High">High</button>
+                  <button class="filter-tab" data-scam-severity="Medium">Medium</button>
+                  <button class="filter-tab" data-scam-severity="Low">Low</button>
+                </div>
+              </div>
+            </div>
+            <div id="secScamGrid" class="sec-scam-grid"></div>
+          </div>
+
+          <div id="secHistoryTab" class="sec-panel">
+            <div id="secHistorySummary" class="sec-history-summary"></div>
+            <div class="glass-card">
+              <div class="sec-history-toolbar">
+                <input class="form-input" id="secHistorySearch" placeholder="Search scans...">
+                <select class="sec-filter-select" id="secHistorySeverity">
+                  <option value="all">All Severity</option>
+                  <option value="Safe">Safe</option>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                  <option value="Critical">Critical</option>
+                </select>
+                <select class="sec-filter-select" id="secHistoryCategory">
+                  <option value="all">All Category</option>
+                  <option value="Phishing">Phishing</option>
+                  <option value="Banking Scam">Banking Scam</option>
+                  <option value="Delivery Scam">Delivery Scam</option>
+                  <option value="Job Scam">Job Scam</option>
+                  <option value="Investment Scam">Investment Scam</option>
+                  <option value="QR Scam">QR Scam</option>
+                  <option value="Social Engineering">Social Engineering</option>
+                  <option value="Spam">Spam</option>
+                  <option value="Safe">Safe</option>
+                </select>
+                <select class="sec-filter-select" id="secHistoryType">
+                  <option value="all">All Type</option>
+                  <option value="Text">Text</option>
+                  <option value="Link">Link</option>
+                  <option value="QR">QR</option>
+                  <option value="File">File</option>
+                  <option value="Voice">Voice</option>
+                </select>
+                <select class="sec-filter-select" id="secHistorySort">
+                  <option value="newest">Newest First</option>
+                  <option value="oldest">Oldest First</option>
+                  <option value="risk-desc">Risk (High-Low)</option>
+                  <option value="risk-asc">Risk (Low-High)</option>
+                </select>
+                <button class="btn btn-sm btn-secondary" id="secExportPDF">📥 PDF Document</button>
+                <button class="btn btn-sm btn-secondary" id="secExportTXT">📋 Text Document</button>
+              </div>
+              <div id="secHistoryTable"></div>
+              <div id="secHistoryPagination" class="sec-pagination"></div>
+            </div>
+          </div>
+
+          <div id="secNotifTab" class="sec-panel">
+            <div class="glass-card">
+              <div class="sec-notif-toolbar">
+                <div class="sec-notif-filters">
+                  <button class="filter-tab active" data-notif-filter="all">All</button>
+                  <button class="filter-tab" data-notif-filter="safe">Safe</button>
+                  <button class="filter-tab" data-notif-filter="warning">Warning</button>
+                  <button class="filter-tab" data-notif-filter="danger">Critical</button>
+                  <button class="filter-tab" data-notif-filter="system">System</button>
+                </div>
+                <div class="sec-notif-actions">
+                  <input class="form-input" id="secNotifSearch" placeholder="Search notifications...">
+                  <button class="btn btn-sm btn-secondary" id="secMarkAllRead">✓ Mark All Read</button>
+                  <button class="btn btn-sm btn-secondary" id="secClearAll">🗑️ Clear All</button>
+                </div>
+              </div>
+              <div id="secNotifList"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="floating-shield" id="floatingShield">
+    <div class="shield-icon safe" role="button" tabindex="0" aria-label="Security status">🛡️<span class="shield-badge" id="shieldMainBadge">3</span></div>
+    <div class="shield-panel">
+      <div class="shield-panel-header">
+        <div class="shield-status"><div class="status-dot safe"></div><span class="status-text">All Safe</span></div>
+        <button class="shield-close btn btn-ghost btn-sm">✕</button>
+      </div>
+      <div class="shield-stat"><span class="stat-label">Threats Today</span><span class="stat-value" id="shieldThreatCount">0</span></div>
+      <div class="shield-actions"><button class="btn btn-primary btn-sm shield-action-btn" onclick="navigateTo('scan.html')">Quick Scan</button></div>
+    </div>
+  </div>
+  <div id="toastContainer" class="toast-container" role="alert" aria-live="polite"></div>
+
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/security-center.js"></script>
+</body>
+</html>
